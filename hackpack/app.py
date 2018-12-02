@@ -25,7 +25,7 @@ def voice():
 
     found_e164_pstn = re.search("^sip:([+][0-9]{10,14})@", to)
     found_011_pstn = re.search("^sip:011([0-9]{10,14})@", to)
-    found_us_pstn = re.search("^sip:[+]?1?([0-9]{10})@", to)
+    found_us_pstn = re.search("^sip:[+]?0?([0-9]{10})@", to)
 
     if found_e164_pstn:
         to = "{0}".format(found_e164_pstn.group(1))
