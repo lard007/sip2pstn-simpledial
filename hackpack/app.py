@@ -24,13 +24,13 @@ def voice():
                 "You will see what it can do for you :-)")
 
     found_e164_pstn = re.search("^sip:([+][0-9]{10,14})@", to)
-    found_011_pstn = re.search("^sip:011([0-9]{10,14})@", to)
-    found_us_pstn = re.search("^sip:[+]?0?([0-9]{10})@", to)
+    found_UK_pstn = re.search("^sip:0([0-9]{10,14})@", to)
+    found_us_pstn = re.search("^sip:[+]?1?([0-9]{10})@", to)
 
     if found_e164_pstn:
         to = "{0}".format(found_e164_pstn.group(1))
-    elif found_011_pstn:
-        to = "+{0}".format(found_011_pstn.group(1))
+    elif found_uk_pstn:
+        to = "+44{0}".format(found_011_pstn.group(1))
     elif found_us_pstn:
         to = "+44{0}".format(found_us_pstn.group(1))
 
